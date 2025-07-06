@@ -1,0 +1,397 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,600;1,900&display=swap");
+@import url("https://rsms.me/inter/inter.css");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-family: "Inter", sans-serif;
+  background: #000000;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+.app {
+  @apply relative w-full h-screen overflow-hidden;
+  background: linear-gradient(135deg, #000000 0%, #1a0033 50%, #000000 100%);
+}
+
+/* Enhanced Home Styles */
+.home-enhanced {
+  @apply w-full h-full flex xl:justify-between justify-start items-start flex-col xl:py-8 xl:px-36 sm:p-8 p-6 max-xl:gap-7 absolute z-10;
+  background: transparent;
+}
+
+.home-content-enhanced {
+  @apply flex-1 xl:justify-center justify-start flex flex-col gap-10;
+}
+
+.head-text-enhanced {
+  @apply xl:text-[12rem] text-[6rem] xl:leading-[12rem] leading-[7rem] font-black;
+  font-family: "Orbitron", monospace;
+  text-shadow: 0 0 30px rgba(138, 43, 226, 0.5);
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    text-shadow: 0 0 30px rgba(138, 43, 226, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 50px rgba(138, 43, 226, 0.8), 0 0 80px rgba(138, 43, 226, 0.3);
+  }
+}
+
+/* Glass Card Effect */
+.glass-card {
+  background: rgba(138, 43, 226, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  border-radius: 16px;
+  box-shadow: 
+    0 8px 32px rgba(138, 43, 226, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(138, 43, 226, 0.15);
+  border-color: rgba(138, 43, 226, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 16px 64px rgba(138, 43, 226, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Neo-Morphism Button */
+.neo-button {
+  background: linear-gradient(145deg, #8b5cf6, #7c3aed);
+  border: none;
+  border-radius: 16px;
+  color: white;
+  font-weight: 700;
+  font-family: "Orbitron", monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 8px 24px rgba(138, 43, 226, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.neo-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.neo-button:hover::before {
+  left: 100%;
+}
+
+.neo-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 16px 48px rgba(138, 43, 226, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.neo-button:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 4px 16px rgba(138, 43, 226, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced Glassmorphism */
+.glassmorphism {
+  background: rgba(138, 43, 226, 0.15);
+  box-shadow: 
+    0 8px 32px rgba(138, 43, 226, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.glassmorphism:hover {
+  background: rgba(138, 43, 226, 0.2);
+  border-color: rgba(138, 43, 226, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 16px 64px rgba(138, 43, 226, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Enhanced Editor Tabs */
+.editortabs-container {
+  background: rgba(138, 43, 226, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid rgba(138, 43, 226, 0.3);
+  border-radius: 20px;
+  box-shadow: 
+    0 8px 32px rgba(138, 43, 226, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  @apply w-16 flex flex-col justify-center items-center ml-1 py-4 gap-4;
+}
+
+.editortabs-container:hover {
+  background: rgba(138, 43, 226, 0.15);
+  border-color: rgba(138, 43, 226, 0.5);
+}
+
+/* Enhanced Filter Tabs */
+.filtertabs-container {
+  @apply absolute z-10 bottom-5 right-0 left-0 w-full flex justify-center items-center flex-wrap gap-4;
+}
+
+/* Enhanced Tab Button */
+.tab-btn {
+  @apply w-14 h-14 flex justify-center items-center cursor-pointer select-none;
+  background: rgba(138, 43, 226, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tab-btn:hover::before {
+  opacity: 1;
+}
+
+.tab-btn:hover {
+  background: rgba(138, 43, 226, 0.2);
+  border-color: rgba(138, 43, 226, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 24px rgba(138, 43, 226, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.tab-btn.active {
+  background: rgba(138, 43, 226, 0.3);
+  border-color: rgba(138, 43, 226, 0.7);
+  box-shadow: 
+    0 0 20px rgba(138, 43, 226, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Enhanced Picker Containers */
+.aipicker-container,
+.filepicker-container {
+  background: rgba(138, 43, 226, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  border-radius: 16px;
+  box-shadow: 
+    0 8px 32px rgba(138, 43, 226, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  @apply absolute left-full ml-3 p-3 w-[195px] h-[220px] flex flex-col gap-4;
+}
+
+.aipicker-container {
+  @apply rounded-md;
+}
+
+.filepicker-container {
+  @apply rounded-md;
+}
+
+/* Enhanced Textarea */
+.aipicker-textarea {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  border-radius: 8px;
+  color: white;
+  @apply w-full text-sm p-2 outline-none flex-1;
+}
+
+.aipicker-textarea:focus {
+  border-color: rgba(138, 43, 226, 0.7);
+  box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.2);
+}
+
+.aipicker-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Enhanced File Picker Label */
+.filepicker-label {
+  background: rgba(138, 43, 226, 0.1);
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  color: white;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  @apply py-1.5 px-2 shadow-sm text-xs focus:outline-none cursor-pointer w-fit;
+}
+
+.filepicker-label:hover {
+  background: rgba(138, 43, 226, 0.2);
+  border-color: rgba(138, 43, 226, 0.5);
+  transform: translateY(-1px);
+}
+
+.filepicker-label:focus {
+  box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.5);
+}
+
+/* Enhanced Download Button */
+.download-btn {
+  background: rgba(138, 43, 226, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  border-radius: 50%;
+  box-shadow: 
+    0 8px 32px rgba(138, 43, 226, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  @apply w-14 h-14 flex justify-center items-center cursor-pointer outline-none;
+}
+
+.download-btn:hover {
+  background: rgba(138, 43, 226, 0.2);
+  border-color: rgba(138, 43, 226, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 16px 64px rgba(138, 43, 226, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Enhanced Color Picker */
+.sketch-picker {
+  background: rgba(138, 43, 226, 0.1) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(138, 43, 226, 0.3) !important;
+  border-radius: 16px !important;
+  box-shadow: 
+    0 8px 32px rgba(138, 43, 226, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  width: 170px !important;
+}
+
+.sketch-picker > div:nth-child(3) {
+  display: none !important;
+}
+
+/* Input File Styling */
+input[type="file"] {
+  z-index: -1;
+  position: absolute;
+  opacity: 0;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(138, 43, 226, 0.5);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(138, 43, 226, 0.7);
+}
+
+/* Glow Effects */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(138, 43, 226, 0.6);
+  }
+}
+
+.glow-effect {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.pulse-animation {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .head-text-enhanced {
+    @apply text-[4rem] leading-[5rem];
+  }
+  
+  .glass-card {
+    padding: 16px;
+  }
+  
+  .neo-button {
+    @apply px-6 py-3 text-sm;
+  }
+}
+
+/* Dark theme body styles */
+body {
+  background: #000000;
+  color: #ffffff;
+}
